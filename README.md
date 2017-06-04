@@ -1,4 +1,6 @@
-# A statistics calculator
+# A linear Regression Calculator
+
+Does not show fit curve yet, and I need to verify the formulas..
 
 Desired funcitionality includes:
 1. Mean value
