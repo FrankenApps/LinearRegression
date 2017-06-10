@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" type="image/x-icon" href="res/favicon.ico">
         <title>Linear Regression</title>
 
         <!-- MathJax -->
-        <script src="libs/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML-full"></script>
         <!-- Jquery -->
         <script src="libs/jquery/jquery-3.1.1.min.js"></script>
         <!-- Tether -->
@@ -38,15 +39,14 @@
       <h3 style="margin-left: 0.5em; display:inline" title="Press enter after every value, in order to create a new cell.">Number of data points:</h3>
       <input type="text" class="data_handler" id="dataPoints" style="display: inline; margin-left: 1.5em" /><br />
       <div id="data-input" style="margin-left: 10px; width: 450px; margin-top: 20px; margin-bottom: 20px">
-        <span style="display: inline">x - data:</span>
-        <span style="display: inline; float:right">y - data:</span><br />
+        <b style="display: inline">X:</b>
+        <b style="display: inline; float:right; margin-right: 180px">Y:</b><br />
         <input type="text" class="data_handler" id="x1" style="display: inline" />
         <input type="text" class="data_handler" id="y1" style="display: inline; float:right" />
       </div>
       <div class="menu">
         <button type="button" style="margin-left: 17px" class="btn btn-outline-success btn-lg" id="calc">Calculate</button>
         <button type="button" class="btn btn-danger btn-sm" id="delete">Delete All</button>
-        <button type="button" class="btn btn-warning btn-sm" id="deleteL">Delete Last</button>
       </div>
       <div class="results" id="results">
         <span id="a">a: \(a = \frac{n \ \sum x_i y_i - \sum x_i \ \sum y_i}{n \sum x_i^2 - \left(\sum x_i \right)^2} =  \) NaN</span><br /><br />
