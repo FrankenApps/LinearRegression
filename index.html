@@ -27,6 +27,8 @@
         <!-- Switchery -->
         <script src="libs/switchery/switchery.min.js"></script>
         <link rel="stylesheet" href="libs/switchery/switchery.min.css" />
+        <!-- Plotly -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
         <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
@@ -53,8 +55,10 @@
         <span id="b">b: \(b = \frac{n \ \sum x_i^2 \sum y_i - \sum x_i \ \sum x_i \ y_i}{n \sum x_i^2 - \left(\sum x_i \right)^2} =  \) NaN</span><br /><br />
         <span id="s_y_squared">Squared Error: \(s_y^2 = \frac{1}{n-2} \left( \sum y_i^2 - a \cdot \sum x_i \ y_i - b \cdot \sum y_i \right) =  \) NaN</span><br /><br />
         <span id="s_y">Normal Error: \(s_y = \sqrt{s_y^2} \) = NaN</span>
-      </div>
+      </div><br />
+      <h2 id="plotTag" style="text-align: center; text-decoration: underline;display:none;color: #FF6347;margin-left:1em">Plot:</h2>
 
+      <div id="plotWindow" style="width:100%;height:85%;display:none"></div>
 
     </body>
 </html>

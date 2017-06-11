@@ -1,5 +1,14 @@
 var dataPoints = 1;
 var language = 'en';
+var constError = 0;
+
+Array.prototype.max = function(){
+    return Math.max.apply( Math, this );
+};
+
+Array.prototype.min = function(){
+    return Math.min.apply( Math, this );
+};
 
 $(document).ready(function() {
   $('#results').slideUp('fast', function() {
@@ -90,6 +99,47 @@ $(document).ready(function() {
 
   //reload MathJax = force new Typesetting
   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+  //Plot the data
+  var xArray = [];
+  for (var i = 1; i < dataPoints; i++) {
+    xArray.push(parseFloat($('#x'+String(i)).val()));
+  }
+  var yArray = [];
+  for (var i = 1; i < dataPoints; i++) {
+    yArray.push(parseFloat($('#y'+String(i)).val()));
+  }
+  var errArray = Array(xArray.length).fill(constError);
+  $('#plotWindow').css('display', 'inline-block');
+  $('#plotTag').css('display', 'inline');
+
+  var trace1 = {
+    x: xArray,
+    y: yArray,
+    error_y: {
+      type: 'data',
+      array: errArray,
+      visible: true
+    },
+    mode: 'markers',
+    type: 'scatter',
+    name: 'Data Points'
+  };
+
+  var trace2 = {
+    x: [xArray.min(),xArray.max()],
+    y: [a*xArray.min()+b,a*xArray.max()+b],
+    mode: 'lines',
+    type: 'scatter',
+    name: 'Fitted Line'
+  };
+
+  var data = [trace1, trace2];
+
+  Plotly.newPlot('plotWindow', data);
+
+
+
   });
 
 });
